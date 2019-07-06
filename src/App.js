@@ -1,26 +1,106 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { ThemeProvider as MaterialThemeProvider } from "@material-ui/styles";
+import styled, { ThemeProvider as StyledThemeProvider } from "styled-components";
+import Theme from "./components/Theme";
 
-function App() {
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin : 0 ;
+  }
+`
+
+// props.theme のなかにテーマが格納されている
+const StyledDiv = styled.div`
+  color: ${props => props.theme.palette.primary.main};
+`
+
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <MaterialThemeProvider theme={Theme}>
+        <StyledThemeProvider theme={Theme}>
+          <>
+            <GlobalStyle />
+            <AppBar position="sticky">
+              <Toolbar>
+                Logo
+              </Toolbar>
+            </AppBar>
+            <StyledDiv>test</StyledDiv>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+            <p>a</p>
+          </>
+        </StyledThemeProvider>
+      </MaterialThemeProvider>
+    </>
   );
-}
+};
 
 export default App;
